@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+    <title>健康朵朵</title>
+
+    <link href="css/style.default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.cookies.js"></script>
+    <script type="text/javascript">
+        if ($.cookie('userID') == null) {
+            alert("请重新登录系统");
+            window.location.href = "./login.html";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+
+
+    <section>
+
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>[</span> DuoDuo <span>]</span></h1>
+            </div>
+            <!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <!--<img alt="" src="images/loggeduser.png" class="media-object">-->
+
+                        <div class="media-body">
+                            <!-- <h4>{userName}</h4> -->
+                            <span>"朵朵 - 关注您的健康"</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">我的账户</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <!-- <li><a href="#"><i class="fa fa-user"></i><span>基本信息</span></a></li> -->
+                        <li><a href="change-password.html"><i class="fa fa-key"></i><span>修改密码</span></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-question-circle"></i><span>用户管理</span></a></li> -->
+                        <li><a href="login.html"><i class="fa fa-sign-out"></i><span>注销</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- <h5 class="sidebartitle">Navigation</h5> -->
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li class="active"><a href="#"><i class="fa fa-home"></i> <span>首页</span></a></li>
+
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-edit"></i> <span>用户管理</span></a>
+                        <ul class="children">
+                            <li><a href="user-register.html"><i class="fa fa-caret-right"></i> 设备/卡分发</a></li>
+                            <li><a href="doctor-register.html"><i class="fa fa-caret-right"></i> 添加医生</a></li>
+                        </ul>
+                    </li>
+                    <!-- 权限：普通用户 -->
+                    <!-- <li class="nav-parent">
+                        <a href=""><i class="fa fa-heart"></i> <span>健康统计</span></a>
+                        <ul class="children">
+                            <li><a href="#"><i class="fa fa-caret-right"></i> 健康报告</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i> 健康咨询</a></li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+
+                <!-- 权限：管理员 -->
+                <div class="infosummary">
+                    <h5 class="sidebartitle">本周概况</h5>
+                    <ul>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常指标 Top1</span>
+                                <h4 id="leftWeekIdx">血压</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常地区 Top1</span>
+                                <h4 id="leftWeekArea">南岗区</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常人数</span>
+                                <h4 id="leftWeekNum">8</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- infosummary -->
+
+            </div>
+            <!-- leftpanelinner -->
+        </div>
+        <!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+                <div class="header-right">
+                    <ul class="headermenu">
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                  <!-- <img src="" alt=""/> -->
+                                  <span id="loginName"></span>
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                    <!-- <li><a href="#"><i class="fa fa-user"></i><span>基本信息</span></a></li> -->
+                                    <li><a href="change-password.html"><i class="fa fa-key"></i><span>修改密码</span></a></li>
+                                    <!-- <li><a href="#"><i class="fa fa-question-circle"></i><span>用户管理</span></a></li> -->
+                                    <li><a href="login.html"><i class="fa fa-sign-out"></i><span>注销</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- header-right -->
+
+            </div>
+            <!-- headerbar -->
+
+            <div class="pageheader">
+                <h2><i class="fa fa-home"></i> 趋势统计 </h2>
+                <!-- <div class="breadcrumb-wrapper">
+                <span class="label">You are here:</span>
+                <ol class="breadcrumb">
+                    <li><a href="admin-index.html">Bracket</a></li>
+                    <li class="active">Blank</li>
+                </ol>
+            </div> -->
+            </div>
+            <!-- pageheader -->
+
+            <div class="contentpanel">
+                <!-- 四个标签卡 -->
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel panel-success panel-stat">
+                            <div class="panel-heading">
+
+                                <div class="stat">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="fa fa-users fa-4x"></span>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <small class="stat-label" data-toggle="tooltip" title="今日上传健康数据的新用户数量">今日新增用户
+                                        </small>
+                                            <h1 id="fourNewToday"></h1>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                    <div class="mb15"></div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <small class="stat-label" data-toggle="tooltip" title="上传健康数据的总用户数量">总用户数量
+                                        </small>
+                                            <h4 id="fourNumTotal"></h4>
+                                        </div>
+
+                                    </div>
+                                    <!-- row -->
+                                </div>
+                                <!-- stat -->
+
+                            </div>
+                            <!-- panel-heading -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-6 -->
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel panel-danger panel-stat">
+                            <div class="panel-heading">
+
+                                <div class="stat">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="fa fa-life-ring fa-4x"></span>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <small class="stat-label" data-toggle="tooltip" title="当月设备统计的指标中偏离正常值最多的指标">
+                                            月异常指标
+                                        </small>
+                                            <h1 id="fourAbIndex"></h1>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                    <div class="mb15"></div>
+
+                                    <small class="stat-label" data-toggle="tooltip" title="该指标异常可能引起的疾病">易发疾病</small>
+                                    <h4 id="fourAbDis"></h4>
+
+                                </div>
+                                <!-- stat -->
+
+                            </div>
+                            <!-- panel-heading -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-6 -->
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel panel-primary panel-stat">
+                            <div class="panel-heading">
+
+                                <div class="stat">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="fa fa-map-marker fa-4x"></span>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <small class="stat-label" data-toggle="tooltip" title="哈尔滨市使用健康设备的用户分布区域">月覆盖区域
+                                            - 全市
+                                        </small>
+                                            <h1 id="fourAreaNum"></h1>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                    <div class="mb15"></div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <small class="stat-label" data-toggle="tooltip" title="当月上传数据最多的区域">活跃区域</small>
+                                            <h4 id="fourAreaAc"></h4>
+                                        </div>
+
+                                        <div class="col-xs-6">
+                                            <small class="stat-label" data-toggle="tooltip" title="当月异常数据最多的区域">异常区域</small>
+                                            <h4 id="fourAreaAb"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                </div>
+                                <!-- stat -->
+
+                            </div>
+                            <!-- panel-heading -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-6 -->
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel panel-dark panel-stat">
+                            <div class="panel-heading">
+
+                                <div class="stat">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="fa fa-cloud-upload fa-4x"></span>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <small class="stat-label" data-toggle="tooltip" title="统计今日 各设备上传客户健康数据的总数目">
+                                            数据上传 - 今日
+                                        </small>
+                                            <h1 id="fourUpToday"></h1>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                    <div class="mb15"></div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <small class="stat-label" data-toggle="tooltip" title="统计上周 各设备上传客户健康数据的总数目">
+                                            上周
+                                        </small>
+                                            <h4 id="fourUpWeek"></h4>
+                                        </div>
+
+                                        <div class="col-xs-6">
+                                            <small class="stat-label" data-toggle="tooltip" title="统计上月 各设备上传客户健康数据的总数目">
+                                            上月
+                                        </small>
+                                            <h4 id="fourUpMonth"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+
+                                </div>
+                                <!-- stat -->
+
+                            </div>
+                            <!-- panel-heading -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-6 -->
+                </div>
+
+                <!-- 上月设备数据上传趋势 -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="uploadIndexTrend" class="h-412"></div>
+                            </div>
+                            <!-- panel-body -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-12 -->
+                </div>
+                <!-- row -->
+
+                <!-- 上月热门咨询问题 + 上月异常指标 -->
+                <div class="row">
+
+                    <div class="col-sm-5">
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb30">
+                                <thead>
+                                    <tr>
+                                        <th>Top 10</th>
+                                        <th>根据异常指标统计易发疾病</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="asterisk">高血压</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="asterisk">脑猝死</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>高血脂</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>心脏病</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>高血糖</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- table-responsive -->
+
+                    </div>
+                    <!-- col-sm-5 -->
+
+                    <div class="col-sm-7">
+                        <!-- 异常指标 -->
+                        <div class="panel panel-success">
+                            <div class="panel-body">
+                                <div id="abnormalIndex" class="h-412"></div>
+                            </div>
+                        </div>
+                        <!-- panel -->
+
+                    </div>
+                    <!-- col-sm-7 -->
+                </div>
+
+                <!-- 上月各类指标上传数 -->
+                <div class="row">
+
+                    <div class="col-sm-7 col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div id="uploadIndexNum" class="h-412"></div>
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- panel-body -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-9 -->
+
+                    <div class="col-sm-5 col-md-4">
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="uploadIndexPie" class="h-412"></div>
+                            </div>
+                            <!-- panel-body -->
+                        </div>
+                        <!-- panel -->
+
+                    </div>
+                    <!-- col-sm-3 -->
+
+                </div>
+
+                <!-- 上月地区健康数据收集情况 -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="areaCollect" class="h-412"></div>
+                            </div>
+                            <!-- panel-body -->
+                        </div>
+                        <!-- panel -->
+                    </div>
+                    <!-- col-sm-12 -->
+                </div>
+                <!-- row -->
+
+            </div>
+            <!-- contentpanel -->
+
+        </div>
+        <!-- mainpanel -->
+
+    </section>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/map-harbin.js"></script>
+    <script src="js/admin-index.js"></script>
+
+</body>
+
+</html>

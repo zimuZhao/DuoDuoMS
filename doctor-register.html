@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+    <title>健康朵朵 - 添加医生</title>
+
+    <link href="css/style.default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.cookies.js"></script>
+    <script type="text/javascript">
+        if ($.cookie('userID') == null) {
+            alert("请重新登录系统");
+            window.location.href = "./login.html";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+
+
+    <section>
+
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>[</span> DuoDuo <span>]</span></h1>
+            </div>
+            <!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <!--<img alt="" src="images/loggeduser.png" class="media-object">-->
+
+                        <div class="media-body">
+                            <!-- <h4>{userName}</h4> -->
+                            <span>"朵朵 - 关注您的健康"</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">我的账户</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <!-- <li><a href="#"><i class="fa fa-user"></i><span>基本信息</span></a></li> -->
+                        <li><a href="change-password.html"><i class="fa fa-key"></i><span>修改密码</span></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-question-circle"></i><span>用户管理</span></a></li> -->
+                        <li><a href="login.html"><i class="fa fa-sign-out"></i><span>注销</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- <h5 class="sidebartitle">Navigation</h5> -->
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li><a href="admin-index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+
+                    <li class="nav-parent nav-active active">
+                        <a href=""><i class="fa fa-edit"></i> <span>用户管理</span></a>
+                        <ul class="children" style="display:block">
+                            <li><a href="user-register.html"><i class="fa fa-caret-right"></i> 设备/卡分发</a></li>
+                            <li class="active"><a href="#"><i class="fa fa-caret-right"></i> 添加医生</a></li>
+                        </ul>
+                    </li>
+                    <!-- 权限：普通用户 -->
+                    <!-- <li class="nav-parent">
+                        <a href=""><i class="fa fa-heart"></i> <span>健康统计</span></a>
+                        <ul class="children">
+                            <li><a href="#"><i class="fa fa-caret-right"></i> 健康报告</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i> 健康咨询</a></li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+
+                <!-- 权限：管理员 -->
+                <div class="infosummary">
+                    <h5 class="sidebartitle">本周概况</h5>
+                    <ul>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常指标 Top1</span>
+                                <h4 id="leftWeekIdx">血压</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常地区 Top1</span>
+                                <h4 id="leftWeekArea">南岗区</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">周异常人数</span>
+                                <h4 id="leftWeekNum">122</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- infosummary -->
+
+            </div>
+            <!-- leftpanelinner -->
+        </div>
+        <!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+                <div class="header-right">
+                    <ul class="headermenu">
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                  <!-- <img src="" alt=""/> -->
+                                  <span id="loginName"></span>
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                  <!-- <li><a href="#"><i class="fa fa-user"></i><span>基本信息</span></a></li> -->
+                                  <li><a href="change-password.html"><i class="fa fa-key"></i><span>修改密码</span></a></li>
+                                  <!-- <li><a href="#"><i class="fa fa-question-circle"></i><span>用户管理</span></a></li> -->
+                                  <li><a href="login.html"><i class="fa fa-sign-out"></i><span>注销</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- header-right -->
+
+            </div>
+            <!-- headerbar -->
+
+            <div class="pageheader">
+                <h2><i class="fa fa-medkit"></i> 添加医生 </h2>
+                <div class="breadcrumb-wrapper">
+                    <!-- <span class="label">You are here:</span> -->
+                    <ol class="breadcrumb">
+                        <li><a href="admin-index.html">首页</a></li>
+                        <li>用户管理</li>
+                        <li class="active">添加医生</li>
+                    </ol>
+                </div>
+
+            </div>
+            <!-- pageheader -->
+
+            <div class="contentpanel">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">新增医生</h4>
+                        <!-- <p>添加新用户，分发设备/卡</p> -->
+                    </div>
+                    <div class="panel-body panel-body-nopadding">
+
+                        <form id="form" class="form-horizontal form-bordered">
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">登录名 <span class="asterisk">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="userName" name="userName" placeholder="请输入登录名" title="" data-toggle="tooltip" data-trigger="hover" class="form-control tooltips" data-original-title="登录名由1~20位字母组成" datatype="*1-20" nullmsg="登录名不能为空">
+                                </div>
+                                <label class="col-sm-1 control-label">密码 <span class="asterisk">*</span></label>
+                                <div class="col-sm-2">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="请输入登录密码" title="" datatype="*" nullmsg="密码不能为空">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">姓名 <span class="asterisk">*</span></label>
+                                <div class="col-sm-2">
+                                    <input id="name" name="name" type="text" class="form-control" placeholder="请输入用户姓名" datatype="*1-20" nullmsg="请输入用户姓名">
+                                </div>
+                                <label class="col-sm-1 control-label">年龄</label>
+                                <div class="col-sm-1">
+                                    <input id="age" name="age" type="text" placeholder="年龄" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">性别</label>
+                                <div class="col-sm-1">
+                                    <select id="sex" class="form-control" tabindex="-1" title="">
+                                        <option value="0">0 未知</option>
+                                        <option value="1">1 男</option>
+                                        <option value="2">2 女</option>
+                                      </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">主治方向</label>
+                                <div class="col-sm-2">
+                                    <input id="direction" name="direction" type="text" placeholder="请输入医生主治方向" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">级别</label>
+                                <div class="col-sm-1">
+                                    <input id="rate" name="rate" type="text" placeholder="级别" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">工作年限</label>
+                                <div class="col-sm-1">
+                                    <input id="workExperience" name="workExperience" type="text" placeholder="工作年限" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">执业编号</label>
+                                <div class="col-sm-2">
+                                    <input id="license" name="license" type="text" placeholder="请输入医生执业编号" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">学历</label>
+                                <div class="col-sm-1">
+                                    <input id="education" name="education" type="text" placeholder="学历" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">薪资</label>
+                                <div class="col-sm-1">
+                                    <input id="pay" name="pay" type="text" placeholder="薪资" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">联系电话</label>
+                                <div class="col-sm-2">
+                                    <input id="mobile" name="mobile" type="text" placeholder="请输入医生联系电话" class="form-control">
+                                </div>
+                                <label class="col-sm-1 control-label">身份证号</label>
+                                <div class="col-sm-3">
+                                    <input id="IDNumber" name="IDNumber" type="text" placeholder="请输入医生身份证号" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">联系地址</label>
+                                <div class="col-sm-6">
+                                    <input id="address" name="address" type="text" placeholder="请输入医生联系地址" class="form-control">
+                                </div>
+                                <!-- 头像上传 -->
+                                <!-- <label class="col-sm-3 control-label">头像</label>
+                                <div class="col-sm-3">
+                                    <input id="imgUrl" name="imgUrl" type="text" class="form-control">
+                                </div> -->
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">简介</label>
+                                <div class="col-sm-6">
+                                    <textarea id="intro" name="intro" placeholder="请输入医生简介" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+
+                    </div>
+                    <!-- panel-body -->
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">确认</button>&nbsp;
+                                <button id="cancel" type="button" class="btn btn-default">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- panel-footer -->
+
+                </div>
+
+                </form>
+
+            </div>
+            <!-- contentpanel -->
+
+        </div>
+        <!-- mainpanel -->
+
+    </section>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/Validform_v5.3.2.js"></script>
+    <script src="js/doctor-register.js"></script>
+
+</body>
+
+</html>
