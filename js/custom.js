@@ -1,3 +1,7 @@
+// 各页公用部分
+var Domain = "/api/";
+$('#loginName').text($.cookie("userName"));
+
 jQuery(window).load(function() {
 
     "use strict";
@@ -211,7 +215,3 @@ jQuery(document).ready(function() {
     });
 
 });
-
-// 各页公用部分
-var Domain = "/api/";
-$('#loginName').text($.cookie("userName"));

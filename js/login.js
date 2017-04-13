@@ -1,12 +1,12 @@
 var Domain = "/api/";
 
-$(document).ready(function() {
+$(document).ready(function () {
     //粒子背景特效
     $('body').particleground({dotColor: '#119380', lineColor: '#119380'});
     //验证码
     createCode();
     //测试提交，对接程序删除即可
-    $(".submit_btn").click(function() {
+    $(".submit_btn").click(function () {
         if (validate()) {
             // 校验用户名密码
             var username = $("#Username").val();
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     dataType: "json",
                     async: false,
                     cache: false,
-                    success: function(data) {
+                    success: function (data) {
                         if (data.status) {
                             //$.cookie('the_cookie'); // 读取 cookie
                             //$.cookie('the_cookie', 'the_value'); // 存储 cookie
@@ -33,13 +33,20 @@ $(document).ready(function() {
                             // path设置同域cookie共享 否则取cookie时会有问题
                             $.cookie('userID', data.result.userID, {path: '/'});
                             $.cookie('userName', data.result.name, {path: '/'});
-                            // $.cookie('password', data.result.password, {path: '/'})
-                            window.location.href = "./admin-index.html";
+                            // cardType 0：管理员 9：医生 1~7：设备卡用户
+                            $.cookie('cardType', data.result.cardType, {path: '/'});
+                            if ($.cookie('cardType') == 0) {
+                                window.location.href = "./admin-index.html";
+                            }else if($.cookie('cardType') == 9){
+                                window.location.href = "#";
+                            }else{
+                                $('.error_msg').text("当前用户暂未开放权限！");
+                            }
                         } else {
                             $('.error_msg').text(data.result);
                         }
                     },
-                    error: function() {
+                    error: function () {
                         alert("服务器未响应！");
                     }
                 });
@@ -52,7 +59,7 @@ $(document).ready(function() {
 /**
  * 回车键登录
  */
-$("body").keydown(function() {
+$("body").keydown(function () {
     if (event.keyCode == "13") {
         $(".submit_btn").click();
     }
@@ -61,7 +68,7 @@ $("body").keydown(function() {
 /**
  * 输入框获取焦点时清空错误提示信息
  */
-$(".admin_login input").focus(function() {
+$(".admin_login input").focus(function () {
     $(".admin_login .error_msg").text("");
 });
 
