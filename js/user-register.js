@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
 
     //表单验证
     $("#form").Validform({
-        tiptype: function(msg, o, cssctl) {
+        tiptype: function (msg, o, cssctl) {
             // o.type指示提示的状态，值为1、2、3、4，
             // 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态
             if (!o.obj.is("form")) { // 验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;
@@ -30,13 +30,13 @@ $(function() {
             }
             // $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
         },
-        beforeSubmit: function() {
+        beforeSubmit: function () {
             addUser();
             return false;
         }
     });
 
-    $("#cancel").click(function() {
+    $("#cancel").click(function () {
         clearUser();
     });
 });
@@ -75,9 +75,9 @@ function addUser() {
         async: false, // async: false先执行完ajax，在执行ajax后面的语句，(async:
         // true，分两个线程走，执行ajax的同时，回调去执行后面的语句)
         cache: false, // 不对结果进行缓存
-        success: function(data) {
+        success: function (data) {
             if (data.status) {
-                alert("用户记录添加成功");
+                alert(data.result);
             } else {
                 alert("用户记录添加失败 - " + data.result);
             }
@@ -111,11 +111,11 @@ function checkUser() {
             return null;
         }
     }
-        return user;
+    return user;
 
 }
 
-$('#ckbOwner').click(function() {
+$('#ckbOwner').click(function () {
     if (this.checked) {
         $('#rES').removeAttr("disabled");
     } else {

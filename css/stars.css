@@ -1,0 +1,32 @@
+.stars-show {
+    margin: 5px 10px 0px;
+    width: 120px;
+    float: left;
+    display: inline-block;
+}
+
+.stars {
+    position: relative;
+    height: 17px;
+    width: 100px;
+    background: url(../images/stars.gif) repeat-x 0px -20px;
+    overflow: hidden;
+    display: block;
+    height: 38px;
+}
+
+.stars-val {
+    background: url(../images/stars.gif) repeat-x top left;
+    height: 17px;
+    float: left;
+    margin: 0px;
+    display: block;
+}
+
+.stars span {
+    bottom: 0;
+    cursor: pointer;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+}

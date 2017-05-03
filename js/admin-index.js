@@ -377,7 +377,7 @@ abnormalIndex.setOption({
 areaCollect.setOption({
     backgroundColor: '#404a59',
     title: {
-        text: '地区健康数据收集情况（上月）',
+        text: '大庆-地区健康数据收集情况（上月）',
         textStyle: {
             color: '#fff'
         }
@@ -407,7 +407,7 @@ areaCollect.setOption({
     series: [
         {
             type: 'map',
-            mapType: 'harbin',
+            mapType: 'daqing',
             roam: true,
             itemStyle: {
                 normal:{label:{show:true}},
@@ -419,59 +419,29 @@ areaCollect.setOption({
             },
             data: [
                 {
-                    name: '道里区',
+                    name: '萨尔图区',
                     value: 205
                 }, {
-                    name: '南岗区',
+                    name: '红岗区',
                     value: 318
                 }, {
-                    name: '道外区',
+                    name: '龙凤区',
                     value: 492
                 }, {
-                    name: '平房区',
+                    name: '让胡路区',
                     value: 169
                 }, {
-                    name: '松北区',
+                    name: '大同区',
                     value: 144
                 }, {
-                    name: '香坊区',
+                    name: '肇源县',
                     value: 406
                 }, {
-                    name: '呼兰区',
+                    name: '林甸县',
                     value: 76
                 }, {
-                    name: '阿城区',
+                    name: '杜尔伯特蒙古族自治县',
                     value: 51
-                }, {
-                    name: '双城区',
-                    value: 152
-                }, {
-                    name: '依兰县',
-                    value: 0
-                }, {
-                    name: '方正县',
-                    value: 0
-                }, {
-                    name: '宾县',
-                    value: 0
-                }, {
-                    name: '巴彦县',
-                    value: 0
-                }, {
-                    name: '木兰县',
-                    value: 0
-                }, {
-                    name: '通河县',
-                    value: 0
-                }, {
-                    name: '延寿县',
-                    value: 0
-                }, {
-                    name: '尚志市',
-                    value: 0
-                }, {
-                    name: '五常市',
-                    value: 0
                 }
             ]
         }
