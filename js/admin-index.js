@@ -3,8 +3,10 @@ var uploadIndexNum = echarts.init(document.getElementById('uploadIndexNum'));
 var uploadIndexPie = echarts.init(document.getElementById('uploadIndexPie'));
 getCountByLastmonth();
 var uploadIndexTrend = echarts.init(document.getElementById('uploadIndexTrend'));
+getAnomalyList();
 getTrendByLastmonth();
 var abnormalIndex = echarts.init(document.getElementById('abnormalIndex'));
+getAnomalyTrendLastmonth();
 var areaCollect = echarts.init(document.getElementById('areaCollect'));
 
 /**
@@ -48,7 +50,6 @@ function getFourCard() {
             alert(data.result);
         }
     });
-
 }
 
 /**
@@ -160,6 +161,41 @@ function getCountByLastmonth() {
 
 }
 
+function getAnomalyList(){
+    var body = $("#anomalyList").html();
+    $.ajax({
+        type: "GET",
+        url: Domain + "user/anomaly/list",
+        dataType: "json",
+        async: true,
+        cache: false,
+        success: function (data) {
+            if (data.status) {
+                if (data.result == "[]") {
+                } else {
+                    $("#anomalyList").html("");
+                    $.each(data.result.y, function (idx, item) {
+                        if(idx==9){
+                            return false;
+                        }
+                        var titemnode = body;
+                        titemnode = titemnode.replace('{num}', idx+1);
+                        titemnode = titemnode.replace('{anomaly}', item);
+                        $("#anomalyList").append(titemnode);
+                        $('#anomalyList').removeClass();
+                    });
+
+                }
+            } else {
+                alert(data.result);
+            }
+        },
+        error: function (data) {
+            alert(data.result);
+        }
+    });
+}
+
 /**
  * [上月设备数据上传趋势 - 堆叠折柱混合图 ]
  */
@@ -239,137 +275,79 @@ function getTrendByLastmonth() {
 /**
  * [上月异常指标趋势 - 折线图]
  */
-abnormalIndex.setOption({
-    title: {
-        text: '异常指标（上月）'
-    },
-    tooltip: {
-        trigger: 'axis'
-    },
-    // legend: {
-    //     "data": [
-    //         '血压',
-    //         '血糖',
-    //         '血氧',
-    //         '尿酸',
-    //         '总胆固醇',
-    //         '脉搏',
-    //         '体温',
-    //         'BMI',
-    //         '血红蛋白',
-    //         '腰臀围'
-    //     ]
-    // },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    toolbox: {
-        feature: {
-            saveAsImage: {}
+function getAnomalyTrendLastmonth(){
+    $.ajax({
+        type: "POST",
+        url: Domain + "user/anomaly/trend",
+        dataType: "json",
+        async: true,
+        cache: false,
+        success: function(data) {
+            if (data.status) {
+                if (data.result == "[]") {} else {
+
+                    var series = new Array;
+                    for (var i = 0; i < data.result.datas.length; i++) {
+                        var serie = new Object();
+                        serie.name = data.result.datas[i].name;
+                        serie.type = "line";
+                        serie.stack = "总量";
+                        serie.data = data.result.datas[i].value;
+                        series[i] = serie;
+                    }
+
+                    abnormalIndex.setOption({
+                        title: {
+                            text: '异常指标（上月）'
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        // legend: {
+                        //     "data": [
+                        //         '血压',
+                        //         '血糖',
+                        //         '血氧',
+                        //         '尿酸',
+                        //         '总胆固醇',
+                        //         '脉搏',
+                        //         '体温',
+                        //         'BMI',
+                        //         '血红蛋白',
+                        //         '腰臀围'
+                        //     ]
+                        // },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            bottom: '3%',
+                            containLabel: true
+                        },
+                        toolbox: {
+                            feature: {
+                                saveAsImage: {}
+                            }
+                        },
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: data.result.x
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: series
+                    });
+
+                }
+            }
+        },
+        error: function(data) {
+            alert(data.result);
         }
-    },
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: [
-            '1',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7',
-            '8',
-            '9',
-            '10',
-            '11',
-            '12',
-            '13',
-            '14',
-            '15',
-            '16',
-            '17',
-            '18',
-            '19',
-            '20',
-            '21',
-            '22',
-            '23',
-            '24',
-            '25',
-            '26',
-            '27',
-            '28',
-            '29',
-            '30',
-            '31'
-        ]
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
-        {
-            name: '血压',
-            type: 'line',
-            stack: '总量',
-            data: [3,0,0,2,1,3,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
-        }, {
-            name: '血糖',
-            type: 'line',
-            stack: '总量',
-            data: [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
-        }, {
-            name: '血氧',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
-        }, {
-            name: '尿酸',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '总胆固醇',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '总胆固醇',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '脉搏',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '体温',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: 'BMI',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '血红蛋白',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }, {
-            name: '腰臀围',
-            type: 'line',
-            stack: '总量',
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-        }
-    ]
-});
+    });
+
+}
 
 /**
  * [上月地区健康数据收集情况]
