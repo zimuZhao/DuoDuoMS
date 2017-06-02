@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-    <title>健康朵朵 - 所有医生</title>
+    <title>健康朵朵 - 家庭医生</title>
 
     <link href="css/style.default.css" rel="stylesheet">
 
@@ -67,17 +67,28 @@
 
             <!-- <h5 class="sidebartitle">Navigation</h5> -->
             <ul class="nav nav-pills nav-stacked nav-bracket">
-                <li><a href="admin-index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+                <li>
+                    <a href="admin-index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+                </li>
 
                 <li class="nav-parent nav-active active">
                     <a href=""><i class="fa fa-edit"></i> <span>用户管理</span></a>
-                    <ul class="children" style="display:block">
+                    <ul class="children" style="display: block">
                         <li><a href="user-register.html"><i class="fa fa-caret-right"></i> 设备/卡分发</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-caret-right"></i> 家庭医生</a></li>
+                        <li><a href="user.html"><i class="fa fa-caret-right"></i> 设备用户</a></li>
+                        <li class="active">
+                            <a href="doctor.html"><i class="fa fa-caret-right"></i> 家庭医生</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
                     <a href="nurse.html"><i class="fa fa-medkit"></i> 家政护工</a>
+                </li>
+                <li>
+                    <a href="data-analysis.html"><i class="fa fa-table"></i> 数据分析</a>
+                </li>
+                <li>
+                    <a href="health-data.html"><i class="fa fa-heart-o"></i> 健康数据</a>
                 </li>
                 <!-- 权限：普通用户 -->
                 <!-- <li class="nav-parent">
@@ -89,32 +100,6 @@
                 </li> -->
 
             </ul>
-
-            <!-- 权限：管理员 -->
-            <div class="infosummary">
-                <h5 class="sidebartitle">本周概况</h5>
-                <ul>
-                    <li>
-                        <div class="datainfo">
-                            <span class="text-muted">周异常指标 Top1</span>
-                            <h4 id="leftWeekIdx">血压</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="datainfo">
-                            <span class="text-muted">周异常地区 Top1</span>
-                            <h4 id="leftWeekArea">南岗区</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="datainfo">
-                            <span class="text-muted">周异常人数</span>
-                            <h4 id="leftWeekNum">122</h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- infosummary -->
 
         </div>
         <!-- leftpanelinner -->
@@ -216,6 +201,20 @@
 
                 </div>
 
+                <table id="Paging" class="table table-bordered table1Style">
+                    <tfoot class="hidden">
+                    <tr>
+                        <td>
+                            <ul class="pagination" active="active" disabled="disabled">
+                                <li class="previous"><span aria-hidden="true">上一页</span></li>
+                                <li class="page"><a></a></li>
+                                <li class="next"><span aria-hidden="true">下一页</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
             </div>
         </div>
         <!-- contentpanel -->
@@ -244,6 +243,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/jquery.table.js"></script>
 <script src="js/doctor.js"></script>
 
 </body>

@@ -1,7 +1,5 @@
-
 /********** 1. FILE IMPORTS **********/
 /*************************************/
-
 @import url('bootstrap.min.css');
 @import url('bootstrap-override.css');
 @import url('font-awesome.min.css');
@@ -39,7 +37,6 @@ strong {
     font-weight: normal;
 }
 
-
 /* preloader */
 
 #preloader {
@@ -62,9 +59,7 @@ strong {
     font-size: 32px;
 }
 
-
 /********** 3. HEADER PANEL **********/
-
 
 /*************************************/
 
@@ -78,7 +73,6 @@ strong {
     display: block;
     content: '';
 }
-
 
 /***** 3.1 HEADER LEFT *****/
 
@@ -140,7 +134,6 @@ strong {
     float: left;
 }
 
-
 /***** 3.2 HEADER RIGHT *****/
 
 .header-right {
@@ -159,7 +152,7 @@ strong {
     content: '';
 }
 
-.headermenu>li {
+.headermenu > li {
     display: inline-block;
     float: left;
     border-left: 1px solid #eee;
@@ -281,7 +274,7 @@ strong {
     transition: all 0.2s ease-out 0s;
 }
 
-.headermenu .tp-icon+.dropdown-menu:after {
+.headermenu .tp-icon + .dropdown-menu:after {
     right: 17px;
 }
 
@@ -382,9 +375,7 @@ strong {
     display: block;
 }
 
-
 /********** 4. LEFT PANEL **********/
-
 
 /***********************************/
 
@@ -480,7 +471,6 @@ strong {
     opacity: 0.5;
 }
 
-
 /***** 4.1 NAVIGATION STYLES *****/
 
 .sidebartitle {
@@ -494,12 +484,12 @@ strong {
     margin-bottom: 30px;
 }
 
-.nav-bracket>li>a {
+.nav-bracket > li > a {
     color: #8f939e;
     padding: 7px 10px;
 }
 
-.nav-bracket>li>a:hover, .nav-bracket>li>a:active, .nav-bracket>li>a:focus {
+.nav-bracket > li > a:hover, .nav-bracket > li > a:active, .nav-bracket > li > a:focus {
     background-color: #fff;
     color: #1d2939;
     -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
@@ -507,11 +497,11 @@ strong {
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-bracket>li.nav-parent>a {
+.nav-bracket > li.nav-parent > a {
     background: transparent url(../images/plus-white.png) no-repeat 92% center;
 }
 
-.nav-bracket>li.nav-parent>a:focus {
+.nav-bracket > li.nav-parent > a:focus {
     background-color: none;
     color: #8F939E;
     -moz-box-shadow: none;
@@ -519,13 +509,13 @@ strong {
     box-shadow: none;
 }
 
-.nav-bracket>li.nav-parent>a:hover, .nav-bracket>li.nav-parent>a:active {
+.nav-bracket > li.nav-parent > a:hover, .nav-bracket > li.nav-parent > a:active {
     color: #1d2939;
     background-color: #fff;
     background-image: url(../images/plus.png);
 }
 
-.nav-bracket>li.nav-active>a {
+.nav-bracket > li.nav-active > a {
     background-color: #fff;
     background-image: url(../images/minus.png);
     color: #1d2939;
@@ -534,35 +524,35 @@ strong {
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-bracket>li.nav-active>a:hover {
+.nav-bracket > li.nav-active > a:hover {
     background-image: url(../images/minus.png);
     background-repeat: no-repeat;
 }
 
-.nav-bracket>li.nav-active>a:focus {
+.nav-bracket > li.nav-active > a:focus {
     color: #1d2939;
 }
 
-.nav-bracket>li.active>a, .nav-bracket>li.active>a:hover, .nav-bracket>li.active>a:focus {
+.nav-bracket > li.active > a, .nav-bracket > li.active > a:hover, .nav-bracket > li.active > a:focus {
     background-color: #1caf9a;
     color: #fff;
 }
 
-.nav-bracket>li.active>a {
+.nav-bracket > li.active > a {
     -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-bracket>li.nav-parent.active>a {
+.nav-bracket > li.nav-parent.active > a {
     background-image: url(../images/plus.png);
 }
 
-.nav-bracket>li.nav-active.active>a {
+.nav-bracket > li.nav-active.active > a {
     background-image: url(../images/minus.png);
 }
 
-.nav-bracket>li.nav-active.active>a:hover {
+.nav-bracket > li.nav-active.active > a:hover {
     background-image: url(../images/minus.png);
 }
 
@@ -574,7 +564,7 @@ strong {
     text-align: center;
 }
 
-.nav-bracket>li>a>.badge {
+.nav-bracket > li > a > .badge {
     margin-top: 2px;
 }
 
@@ -585,7 +575,7 @@ strong {
     padding: 0;
 }
 
-.nav-bracket .children>li>a {
+.nav-bracket .children > li > a {
     color: #94989d;
     font-size: 13px;
     display: block;
@@ -595,16 +585,16 @@ strong {
     transition: all 0.2s ease-out 0s;
 }
 
-.nav-bracket .children>li>a>span {
+.nav-bracket .children > li > a > span {
     margin-top: 2px;
 }
 
-.nav-bracket .children>li>a:hover, .nav-bracket .children>li>a:active, .nav-bracket .children>li>a:focus {
+.nav-bracket .children > li > a:hover, .nav-bracket .children > li > a:active, .nav-bracket .children > li > a:focus {
     text-decoration: none;
     color: #1caf9a;
 }
 
-.nav-bracket .children>li .fa {
+.nav-bracket .children > li .fa {
     font-size: 12px;
     opacity: 0.5;
     margin-right: 5px;
@@ -613,7 +603,7 @@ strong {
     vertical-align: baseline;
 }
 
-.nav-bracket .children>li.active>a {
+.nav-bracket .children > li.active > a {
     color: #1caf9a;
 }
 
@@ -621,7 +611,6 @@ strong {
     margin-left: 12px;
     border: 0;
 }
-
 
 /***** 4.2 INFO SUMMARY *****/
 
@@ -673,9 +662,7 @@ strong {
     opacity: 0.6;
 }
 
-
 /********** 5. MAIN PANEL **********/
-
 
 /***********************************/
 
@@ -728,7 +715,6 @@ strong {
 
 .pageheader .fa-file-text {
     padding: 6px 10px;
-    `
 }
 
 .pageheader .fa-map-marker {
@@ -830,7 +816,6 @@ p {
     margin-bottom: 10px;
 }
 
-
 /***** 5.1. DASHBOARD ******/
 
 .panel-stat {
@@ -898,13 +883,11 @@ p {
     height: 248px;
 }
 
-.ex-donut-chart>svg, .ex-line-chart>svg {
+.ex-donut-chart > svg, .ex-line-chart > svg {
     width: 100% !important;
 }
 
-
 /********** 6. FORM STYLES **********/
-
 
 /************************************/
 
@@ -1111,7 +1094,6 @@ div.error label.error:before {
     top: 40px;
 }
 
-
 /* CKEDITOR */
 
 /*.ck-editable {
@@ -1127,7 +1109,6 @@ div.error label.error:before {
 .ck-editable h4 {
     color: #333;
 }*/
-
 
 /* X-EDITABLE */
 
@@ -1159,7 +1140,6 @@ div.error label.error:before {
 .editable-unsaved {
     font-weight: normal;
 }*/
-
 
 /***** 6.1 FORM WIZARD STYLES *****/
 
@@ -1256,9 +1236,7 @@ div.error label.error:before {
     content: '';
 }*/
 
-
 /********** 7. UI ELEMENTS **********/
-
 
 /*********************************/
 
@@ -1719,9 +1697,7 @@ div.error label.error:before {
     width: auto;
 }*/
 
-
 /********** 8. EMAIL **********/
-
 
 /******************************/
 /*
@@ -1852,9 +1828,7 @@ div.error label.error:before {
     color: #333;
 }*/
 
-
 /********** 9. TABLES **********/
-
 
 /*******************************/
 
@@ -1924,9 +1898,7 @@ div.error label.error:before {
 
 /********** 10. PAGES **********/
 
-
 /*******************************/
-
 
 /***** 10.1 CALENDAR *****/
 
@@ -1940,7 +1912,6 @@ div.error label.error:before {
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }*/
-
 
 /***** 10.2 MEDIA MANAGER *****/
 
@@ -2349,7 +2320,6 @@ div.error label.error:before {
     line-height: normal;
 }*/
 
-
 /****** 10.4 BLOG LIST ******/
 
 /*.blog-item {
@@ -2504,7 +2474,6 @@ div.error label.error:before {
 .blog-quote .quote-danger a:hover {
     background-color: #D43F3A;
 }*/
-
 
 /***** 10.5 BLOG SINGLE *****/
 /*
@@ -2748,7 +2717,7 @@ div.error label.error:before {
 
 /***** 10.7 NOT FOUND PAGE *****/
 
-/*.notfoundpanel {
+.notfoundpanel {
     text-align: center;
     margin-top: 10%;
     width: 600px;
@@ -2772,16 +2741,15 @@ div.error label.error:before {
     font-size: 14px;
 }
 
-.notfoundpanel form {
-    width: 350px;
-    margin: 20px auto 0 auto;
-}
+/*.notfoundpanel form {*/
+    /*width: 350px;*/
+    /*margin: 20px auto 0 auto;*/
+/*}*/
 
-.notfoundpanel .form-control {
-    width: 250px;
-    float: left;
-}*/
-
+/*.notfoundpanel .form-control {*/
+    /*width: 250px;*/
+    /*float: left;*/
+/*}*/
 
 /***** 10.8 SEARCH RESULTS *****/
 
@@ -2820,7 +2788,6 @@ div.error label.error:before {
 .results-list .media-body {
     line-height: 18px;
 }*/
-
 
 /***** 10.9 INVOICE *****/
 
@@ -3163,7 +3130,6 @@ div.error label.error:before {
 
 /********** 11. LEFT PANEL COLLAPSED **********/
 
-
 /**********************************************/
 
 .leftpanel-collapsed .logopanel {
@@ -3200,15 +3166,15 @@ div.error label.error:before {
     position: relative;
 }
 
-.leftpanel-collapsed .nav-bracket>li>a:hover {
+.leftpanel-collapsed .nav-bracket > li > a:hover {
     border-radius: 2px 0 0 2px;
 }
 
-.leftpanel-collapsed .nav-bracket>li.nav-parent>a {
+.leftpanel-collapsed .nav-bracket > li.nav-parent > a {
     background-image: none;
 }
 
-.leftpanel-collapsed .nav-bracket>li>a>span:last-child {
+.leftpanel-collapsed .nav-bracket > li > a > span:last-child {
     position: absolute;
     background: #fff;
     padding: 10px 10px 10px 5px;
@@ -3226,11 +3192,11 @@ div.error label.error:before {
     border-radius: 0 2px 2px 0;
 }
 
-.leftpanel-collapsed .nav-bracket>li>a .badge {
+.leftpanel-collapsed .nav-bracket > li > a .badge {
     display: none;
 }
 
-.leftpanel-collapsed .nav-bracket>li.active>a>span:last-child {
+.leftpanel-collapsed .nav-bracket > li.active > a > span:last-child {
     -moz-border-radius: 0 2px 0 0;
     -webkit-border-radius: 0 2px 0 0;
     border-radius: 0 2px 0 0;
@@ -3240,21 +3206,21 @@ div.error label.error:before {
     display: none;
 }
 
-.leftpanel-collapsed .nav-bracket>li.nav-hover>a {
+.leftpanel-collapsed .nav-bracket > li.nav-hover > a {
     background: #fff;
     color: #1d2939;
 }
 
-.leftpanel-collapsed .nav-bracket>li.nav-hover.active>a {
+.leftpanel-collapsed .nav-bracket > li.nav-hover.active > a {
     background: #1CAF9A;
     color: #fff;
 }
 
-.leftpanel-collapsed .nav-bracket>li.nav-hover>a>span:last-child {
+.leftpanel-collapsed .nav-bracket > li.nav-hover > a > span:last-child {
     display: block;
 }
 
-.leftpanel-collapsed .nav-bracket>li.nav-hover.active>a>span:last-child {
+.leftpanel-collapsed .nav-bracket > li.nav-hover.active > a > span:last-child {
     background: #1CAF9A;
     color: #fff;
 }
@@ -3303,9 +3269,7 @@ div.error label.error:before {
     display: none;
 }
 
-
 /********** 12. RIGHT PANEL STYLES **********/
-
 
 /********************************************/
 
@@ -3440,7 +3404,6 @@ div.error label.error:before {
 
 /********** 13. HORIZONTAL MENU **********/
 
-
 /*****************************************/
 
 /*.horizontal-menu {
@@ -3470,6 +3433,7 @@ div.error label.error:before {
     width: 240px;
     border-right: 1px solid #eee;
 }
+
 /*
 .horizontal-menu.chat-view .navhor-bracket {
     padding: 0;
@@ -3480,18 +3444,18 @@ div.error label.error:before {
     margin: 0;
 }
 
-.headerbar .topnav>ul {
+.headerbar .topnav > ul {
     padding: 0;
     margin: 0;
     float: left;
 }
 
-.headerbar .topnav>ul>li {
+.headerbar .topnav > ul > li {
     margin: 0;
     float: left;
 }
 
-.headerbar .topnav>ul>li>a {
+.headerbar .topnav > ul > li > a {
     padding: 15px 15px 12px 15px;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -3502,44 +3466,42 @@ div.error label.error:before {
     font-family: 'LatoBold', sans-serif;
 }
 
-.headerbar .topnav>ul>li>a:hover, .headerbar .topnav>ul>li>a:focus, .headerbar .topnav>ul>li.open>a, .headerbar .topnav>ul>li.active>a {
+.headerbar .topnav > ul > li > a:hover, .headerbar .topnav > ul > li > a:focus, .headerbar .topnav > ul > li.open > a, .headerbar .topnav > ul > li.active > a {
     box-shadow: 0 3px 0 #1CAF9A;
     color: #1CAF9A;
     background: none;
 }
 
-.headerbar .topnav>ul>li>a i {
+.headerbar .topnav > ul > li > a i {
     margin-right: 5px;
 }
 
-.headerbar .topnav>ul>li>a .badge {
+.headerbar .topnav > ul > li > a .badge {
     margin-left: 10px;
 }
 
-.headerbar .topnav>ul>li .dropdown-menu {
+.headerbar .topnav > ul > li .dropdown-menu {
     margin-top: 2px;
     -moz-border-radius: 0 0 3px 3px;
     -webkit-border-radius: 0 0 3px 3px;
     border-radius: 0 0 3px 3px;
 }
 
-.headerbar .topnav>ul>li .dropdown-menu>li>a {
+.headerbar .topnav > ul > li .dropdown-menu > li > a {
     padding: 6px 10px;
     font-size: 13px;
 }
 
-.headerbar .topnav>ul>li .dropdown-menu>li>a:hover {
+.headerbar .topnav > ul > li .dropdown-menu > li > a:hover {
     background: #1CAF9A;
     color: #fff;
 }
 
-.headerbar .topnav>ul>li .dropdown-menu i {
+.headerbar .topnav > ul > li .dropdown-menu i {
     display: none;
 }
 
-
 /********** 14. FIXED WIDTH **********/
-
 
 /*************************************/
 
@@ -3578,9 +3540,7 @@ div.error label.error:before {
     display: none;
 }*/
 
-
 /********** 15. MODALS **********/
-
 
 /********************************/
 
@@ -3673,7 +3633,6 @@ div.error label.error:before {
 
 /********** 16. BUG TRACKER **********/
 
-
 /*************************************/
 
 .panel .panel-table {
@@ -3722,12 +3681,9 @@ div.error label.error:before {
     margin-bottom: 5px;
 }
 
-
 /********** 17. ADDITIONAL STYLES **********/
 
-
 /*******************************************/
-
 
 /***** 17.1 DROPDOWN *****/
 
@@ -3743,7 +3699,6 @@ div.error label.error:before {
     font-size: 11px;
     margin: 0;
 }
-
 
 /***** 17.2 ICON *****/
 
@@ -3768,13 +3723,11 @@ div.error label.error:before {
     padding: 2px 5px;
 }
 
-
 /***** 17.3 TIME PICKER *****/
 
 .bootstrap-timepicker-widget.dropdown-menu {
     width: 230px;
 }
-
 
 /***** 17.4 COLOR PICKER *****/
 
@@ -3786,7 +3739,6 @@ div.error label.error:before {
 .colorselector {
     margin-top: 4px;
 }*/
-
 
 /***** 17.5 STICKY HEADER */
 
@@ -3953,9 +3905,7 @@ div.error label.error:before {
     display: inline-block;
 }
 
-
 /********** 18. MEDIA QUERIES **********/
-
 
 /***************************************/
 
@@ -3963,79 +3913,103 @@ div.error label.error:before {
     body {
         position: relative;
     }
+
     .leftpanel {
         display: none;
     }
+
     .mainpanel {
         margin-left: 0;
         width: 100%;
     }
+
     .leftpanel-collapsed .leftpanel {
         display: none;
     }
+
     .leftpanel-collapsed .mainpanel {
         margin-left: 0;
     }
+
     .leftpanel-collapsed .headerbar {
         margin-left: 0;
     }
+
     .leftpanel-show section {
         overflow-x: hidden;
     }
+
     .leftpanel-show .leftpanel {
         display: block;
     }
+
     .leftpanel-show .mainpanel {
         margin-left: 240px;
     }
+
     .stickyheader .headerbar {
         left: 0;
     }
+
     .stickyheader.leftpanel-show .headerbar {
         left: 240px;
     }
+
     .stickyheader.chat-relative-view .headerbar {
         right: 240px;
         left: auto;
     }
+
     .stickyheader .header-right {
         margin-right: 0;
     }
+
     .btn-demo {
         margin-bottom: 20px;
     }
+
     .leftpanelinner {
         padding: 5px 10px;
     }
+
     .leftpanelinner .searchform input {
         background: #131b26;
         border: 0;
     }
+
     /* horizontal menu related */
     .nav-horizontal {
         position: relative;
     }
+
     .horizontal-menu .menutoggle {
         display: block;
     }
+
     .horizontal-menu .headerbar .logopanel {
         display: none;
     }
+
     .nav-horizontal .caret {
         display: none;
     }
+
     .horizontal-menu .header-left, .horizontal-menu .topnav {
         float: none;
     }
+
     .horizontal-menu-sidebar .header-left, .horizontal-menu-sidebar .topnav {
         float: none;
     }
+
     .fixed-noleft .menutoggle {
         display: block;
     }
+
     .fixed-noleft .headerbar .logopanel {
         display: none;
     }
+
     .fixed-noleft .header-left, .fixed-noleft .topnav {
         float: none;
     }
@@ -4045,21 +4019,27 @@ div.error label.error:before {
     .searchform {
         position: relative;
     }
+
     .headermenu li:nth-child(4) {
         display: none;
     }
+
     .leftpanel .searchform, .leftpanel .userlogged {
         display: block;
     }
+
     .breadcrumb-wrapper {
         display: none;
     }
+
     .headermenu .dropdown-menu:after {
         display: none;
     }
-    .rightpanel .nav-tabs.nav-justified>li>a, .rightpanel .nav-justified>li>a {
+
+    .rightpanel .nav-tabs.nav-justified > li > a, .rightpanel .nav-justified > li > a {
         margin-bottom: 0;
     }
+
     .panel-email .col-sm-3 {
         display: none;
     }
@@ -4070,94 +4050,116 @@ div.error label.error:before {
         width: auto;
         padding: 0 20px;
     }
+
     .notfoundpanel h1 {
         font-size: 72px;
         line-height: 72px;
     }
+
     .notfoundpanel h3 {
         font-size: 14px;
         line-height: normal;
     }
+
     .notfound h4 {
         font-size: 12px;
         line-height: 18px;
     }
+
     .notfoundpanel form {
         width: auto;
     }
+
     .notfoundpanel .form-control {
         float: none;
         width: 100%;
     }
+
     .notfoundpanel .btn {
         margin-top: 10px;
         width: 100%;
     }
+
     .signinpanel, .signuppanel {
         margin: 0 auto;
         width: 480px;
         padding: 20px;
     }
+
     .signinpanel form {
         margin-top: 20px;
     }
+
     .signup-footer {
         margin-bottom: 10px;
     }
+
     .signuppanel .form-control {
         margin-bottom: 10px;
     }
+
     .signup-footer .pull-left, .signup-footer .pull-right {
         float: none !important;
         text-align: center;
     }
-    .widget-quick-status-post .nav-tabs.nav-justified>li {
+
+    .widget-quick-status-post .nav-tabs.nav-justified > li {
         display: table-cell;
         width: 1%;
         margin-bottom: -5px;
     }
-    .widget-quick-status-post .nav-tabs.nav-justified>li a {
+
+    .widget-quick-status-post .nav-tabs.nav-justified > li a {
         margin: 0;
     }
-    .nav-tabs.nav-justified.nav-profile>li {
+
+    .nav-tabs.nav-justified.nav-profile > li {
         float: none;
         margin-bottom: 0;
         display: table-cell;
         width: 1%;
     }
-    .nav-tabs.nav-justified.nav-profile>li a {
+
+    .nav-tabs.nav-justified.nav-profile > li a {
         margin: 0;
         -moz-border-radius: 3px 3px 0 0;
         -webkit-border-radius: 3px 3px 0 0;
         border-radius: 3px 3px 0 0;
     }
+
     .dataTables_info {
         float: none !important;
         text-align: center;
         margin-bottom: 10px;
     }
+
     .dataTables_paginate {
         margin-bottom: 10px;
         text-align: center !important;
         float: none !important;
     }
+
     .paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
         float: none !important;
     }
+
     .dataTables_filter, .dataTables_length {
         float: none !important;
         padding: 10px 0 0 10px;
         margin: auto !important;
         display: inline-block;
     }
+
     .table.dataTable th, .table.dataTable td {
         font-size: 13px;
         min-width: 150px;
     }
+
     .paging_full_numbers {
         min-width: 500px;
         margin: 0 0 10px 10px;
     }
+
     .paging_full_numbers:after {
         clear: both;
         display: block;
@@ -4169,18 +4171,23 @@ div.error label.error:before {
     .signinpanel, .signuppanel {
         width: 360px;
     }
+
     .panel-email .pull-right {
         float: none !important;
     }
+
     .pageheader h2 {
         font-size: 18px;
     }
+
     .pageheader .glyphicon, .pageheader .fa {
         font-size: 18px;
     }
+
     .pageheader h2 span {
         font-size: 11px;
     }
+
     .fc-header td {
         display: block !important;
         text-align: center;
@@ -4189,76 +4196,94 @@ div.error label.error:before {
         padding: 10px !important;
         margin-top: -1px;
     }
+
     .fc-button {
         padding: 2px 5px !important;
         margin: 0 !important;
     }
+
     .fc-header-title h2 {
         margin: 0 !important;
     }
+
     .filemanager-options li {
         padding: 5px 7px;
     }
+
     .filemanager-options .filter-type {
         display: block;
         float: none;
         border-top: 1px solid #eee;
     }
+
     .comment-list .media-object {
         width: 30px;
         padding: 2px;
     }
-    .comment-list .media>.pull-left {
+
+    .comment-list .media > .pull-left {
         margin: 0;
     }
+
     .comment-list h4 {
         font-size: 13px;
     }
+
     .comment-list .reply {
         font-size: 10px;
         padding: 2px 5px;
     }
+
     .comment-list .media-body {
         font-size: 12px;
         line-height: 18px;
     }
+
     .blog-content form {
         margin-bottom: 20px;
     }
+
     .letter-list {
         -moz-box-shadow: none;
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+
     .letter-list::after {
         clear: both;
         display: block;
         content: '';
     }
+
     .letter-list li {
         float: left;
         width: auto;
         display: inline-block;
     }
+
     .letter-list li a {
         display: block;
         padding: 2px 5px;
     }
+
     .btn-invoice:before {
         display: block;
         content: '';
         clear: both;
     }
+
     .btn-invoice .btn {
         display: block;
         width: 100%;
         margin-top: 10px;
     }
-    .nav-tabs.nav-justified.nav-profile>li a {
+
+    .nav-tabs.nav-justified.nav-profile > li a {
         font-size: 13px;
         padding: 14px 10px;
     }
-    #bloglist>div {
+
+    #bloglist > div {
         padding: 0;
         margin: 0;
         float: none;
@@ -4270,56 +4295,70 @@ div.error label.error:before {
     .pageheader h2 span {
         display: none;
     }
+
     .blog-title {
         font-size: 14px;
         line-height: 18px;
     }
+
     .blog-summary {
         font-size: 12px;
         line-height: 18px;
     }
+
     .blog-summary .btn {
         padding: 2px 5px;
         display: block;
         width: 100%;
     }
+
     .headermenu li:first-child .dropdown-menu {
         margin-right: -130px;
     }
+
     .headermenu li:nth-child(2) .dropdown-menu {
         margin-right: -85px;
     }
+
     .headermenu li:nth-child(3) .dropdown-menu {
         margin-right: -37px;
     }
-    .nav-tabs.nav-justified.nav-profile>li {
+
+    .nav-tabs.nav-justified.nav-profile > li {
         float: none;
         display: block;
         width: auto;
     }
+
     .blog-media .media-body {
         overflow: visible;
     }
+
     .follower-list .btn {
         display: block;
         margin: 0 0 5px 0;
         width: 100%;
     }
+
     .filemanager-options li {
         display: block;
         border-top: 1px solid #eee;
     }
+
     .filemanager-options li:first-child {
         border-top: 0;
     }
+
     .authorpanel .media-object {
         width: 80px;
         margin-right: 10px;
     }
+
     .people-item .media-object {
         width: 80px !important;
         height: 80px !important;
     }
+
     .pagination {
         margin-bottom: 20px;
     }
@@ -4331,7 +4370,6 @@ div.error label.error:before {
     }
 }
 
-
 /* custom */
 
 .h-412 {
@@ -4339,5 +4377,5 @@ div.error label.error:before {
 }
 
 .h-30 {
-  height: 30px;
+    height: 30px;
 }

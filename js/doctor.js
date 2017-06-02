@@ -57,7 +57,7 @@ function getDoctorlist(pageNo) {
 
 function editDoctor(element) {
     var doctorID = $(element).parents("tr").attr("id");
-    alert('可以跳转啦! id=' + doctorID);
+    alert('现在暂时不能修改! id=' + doctorID);
     // window.location.href = "liveHomePage/" + liveID;
 }
 

@@ -61,7 +61,7 @@ function getNurselist(pageNo) {
 
 function editNurse(element) {
     var nurseID = $(element).parents("tr").attr("id");
-    alert('可以跳转啦! id=' + nurseID);
+    alert('现在暂时不能修改! id=' + nurseID);
     // window.location.href = "liveHomePage/" + liveID;
 }
 
