@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-    <title>健康朵朵 - 数据分析</title>
+    <title>健康朵朵 - 健康数据/历史记录</title>
 
     <link href="css/style.default.css" rel="stylesheet">
 
@@ -82,7 +82,7 @@
                 <li>
                     <a href="nurse.html"><i class="fa fa-medkit"></i> 家政护工</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="data-analysis.html"><i class="fa fa-table"></i> 数据分析</a>
                 </li>
                 <li>
@@ -136,85 +136,54 @@
         <!-- headerbar -->
 
         <div class="pageheader">
-            <h2><i class="fa fa-table"></i> 数据分析 </h2>
-            <div class="breadcrumb-wrapper">
-                <ol class="breadcrumb">
-                    <li><a href="admin-index.html">首页</a></li>
-                    <li class="active">数据分析</li>
-                </ol>
-            </div>
-
+            <h2> {item}历史记录 </h2>
         </div>
         <!-- pageheader -->
 
         <div class="contentpanel">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="col-sm-6 col-sm-offset-3 form-group">
-                        <div class="col-sm-4">
-                            <select id="item" tabindex="-1" class="form-control">
-                                <option value="0">健康指标</option>
-                                <option value="1">血糖</option>
-                                <option value="2">血氧</option>
-                                <option value="3">血压</option>
-                                <option value="4">BMI</option>
-                                <option value="5">尿酸</option>
-                                <option value="6">血红蛋白</option>
-                                <option value="7">体温</option>
-                                <option value="8">总胆固醇</option>
-                                <option value="9">腰臀比</option>
-                                <option value="10">脉搏</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-primary">确认</button>
-                        <button class="btn btn-warning">导出Excel表格</button>
-                    </div>
-                    <!-- select-->
-                    <div class="table-responsive">
-                        <table class="table mb30">
-                            <thead>
-                            <tr>
-                                <th>测量时间</th>
-                                <th>测量值</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{measureTime}</td>
-                                <td>{value}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- table-responsive -->
-                    <table id="Paging" class="table table-bordered">
-                        <tfoot class="">
+            <div>
+
+                <div class="table-responsive">
+                    <table class="table mb30">
+                        <thead>
                         <tr>
-                            <td>
-                                <ul class="pagination" active="avtive" disabled="disabled">
-                                    <li class="previous"><span aria-hidden="true">上一页</span></li>
-                                    <li class="page"><a></a></li>
-                                    <li class="next"><span aria-hidden="true">下一页</span></li>
-                                </ul>
-                            </td>
+                            <th>序号</th>
+                            <th>测量时间</th>
+                            <th>测量值</th>
                         </tr>
-                        </tfoot>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{num}</td>
+                            <td>{measureTime}</td>
+                            <td>{value}</td>
+                        </tr>
+                        </tbody>
                     </table>
                 </div>
+                <!--table-responsive-->
+                <table id="Paging" class="table table-bordered">
+                    <tfoot>
+                    <tr>
+                        <td>
+                            <ul class="pagination" active="active" disabled="disabled">
+                                <li class="previous"><span aria-hidden="true">上一页</span></li>
+                                <li class="page"><a></a></li>
+                                <li class="next"><span aria-hidden="true">下一页</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <!-- contentpanel -->
             </div>
-
-
-            <!-- contentpanel -->
+            <!-- mainpanel -->
         </div>
-        <!-- mainpanel -->
-    </div>
 </section>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/jquery.table.js"></script>
-<script src="js/data-analysis.js"></script>
 
 </body>
 
