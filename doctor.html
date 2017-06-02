@@ -20,10 +20,10 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.cookies.js"></script>
     <script type="text/javascript">
-     if ($.cookie('userID') == null) {
+        if ($.cookie('userID') == null) {
             alert("请重新登录系统");
             window.location.href = "./login.html";
-        }   
+        }
     </script>
 </head>
 
@@ -181,24 +181,30 @@
                         <table class="table mb30">
                             <thead>
                             <tr>
-                                <th>序号</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th></th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年龄</th>
+                                <th>主治方向</th>
+                                <th>工作年限</th>
+                                <th>联系电话</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                            <tbody id="doctorList" class="hidden">
+                            <tr id="{doctorID}">
+                                <td>{name}</td>
+                                <td>{sex}</td>
+                                <td>{age}</td>
+                                <td>{direction}</td>
+                                <td>{workExperience}</td>
+                                <td>{mobile}</td>
                                 <td class="table-action">
-                                    <div class="btn btn-warning-alt btn-xs" data-toggle="tootip" title="修改">
+                                    <div title="修改" data-toggle="tootip" class="btn btn-warning-alt btn-xs"
+                                         onclick="editDoctor(this)">
                                         <i class="fa fa-pencil"></i>
                                     </div>
-                                    <div class="btn btn-danger-alt btn-xs" data-toggle="tootip" title="删除">
+                                    <div title="删除" data-toggle="tootip" class="btn btn-danger-alt btn-xs"
+                                         onclick="deleteDoctor(this)">
                                         <i class="fa fa-trash-o"></i>
                                     </div>
                                 </td>
@@ -211,16 +217,34 @@
                 </div>
 
             </div>
-            <!-- contentpanel -->
-
         </div>
-        <!-- mainpanel -->
+        <!-- contentpanel -->
+
+    </div>
+    <!-- mainpanel -->
 
 </section>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                <h4 class="modal-title">确定删除当前医生？</h4>
+            </div>
+            <div class="modal-body">医生删除后将不能再为用户提供服务</div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-danger" id="deleteConfirm">删除</button>
+                <button class="btn btn-xs btn-default" aria-hidden="true" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/doctor.js"></script>
 
 </body>
 

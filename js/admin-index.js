@@ -23,9 +23,10 @@ function getFourCard() {
         dataType: "json",
         async: true,
         cache: false,
-        success: function(data) {
+        success: function (data) {
             if (data.status) {
-                if (data.result == "[]") {} else {
+                if (data.result == "[]") {
+                } else {
                     //用户量
                     $('#fourNewToday').html(data.result.userNum.newToday);
                     $('#fourNumTotal').html(data.result.userNum.total);
@@ -46,7 +47,7 @@ function getFourCard() {
                 }
             }
         },
-        error: function(data) {
+        error: function (data) {
             alert(data.result);
         }
     });
@@ -62,9 +63,10 @@ function getCountByLastmonth() {
         dataType: "json",
         async: true,
         cache: false,
-        success: function(data) {
+        success: function (data) {
             if (data.status) {
-                if (data.result == "[]") {} else {
+                if (data.result == "[]") {
+                } else {
 
                     /**
                      *  [上月各类指标上传频率 - 横向柱状图]
@@ -154,17 +156,17 @@ function getCountByLastmonth() {
                 }
             }
         },
-        error: function(data) {
+        error: function (data) {
             alert(data.result);
         }
     });
 
 }
 
-function getAnomalyList(){
+function getAnomalyList() {
     var body = $("#anomalyList").html();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: Domain + "user/anomaly/list",
         dataType: "json",
         async: true,
@@ -175,11 +177,11 @@ function getAnomalyList(){
                 } else {
                     $("#anomalyList").html("");
                     $.each(data.result.y, function (idx, item) {
-                        if(idx==9){
+                        if (idx == 9) {
                             return false;
                         }
                         var titemnode = body;
-                        titemnode = titemnode.replace('{num}', idx+1);
+                        titemnode = titemnode.replace('{num}', idx + 1);
                         titemnode = titemnode.replace('{anomaly}', item);
                         $("#anomalyList").append(titemnode);
                         $('#anomalyList').removeClass();
@@ -206,9 +208,10 @@ function getTrendByLastmonth() {
         dataType: "json",
         async: true,
         cache: false,
-        success: function(data) {
+        success: function (data) {
             if (data.status) {
-                if (data.result == "[]") {} else {
+                if (data.result == "[]") {
+                } else {
 
                     var series = new Array;
                     for (var i = 0; i < data.result.datas.length; i++) {
@@ -265,7 +268,7 @@ function getTrendByLastmonth() {
                 }
             }
         },
-        error: function(data) {
+        error: function (data) {
             alert(data.result);
         }
     });
@@ -275,16 +278,17 @@ function getTrendByLastmonth() {
 /**
  * [上月异常指标趋势 - 折线图]
  */
-function getAnomalyTrendLastmonth(){
+function getAnomalyTrendLastmonth() {
     $.ajax({
         type: "POST",
         url: Domain + "user/anomaly/trend",
         dataType: "json",
         async: true,
         cache: false,
-        success: function(data) {
+        success: function (data) {
             if (data.status) {
-                if (data.result == "[]") {} else {
+                if (data.result == "[]") {
+                } else {
 
                     var series = new Array;
                     for (var i = 0; i < data.result.datas.length; i++) {
@@ -342,7 +346,7 @@ function getAnomalyTrendLastmonth(){
                 }
             }
         },
-        error: function(data) {
+        error: function (data) {
             alert(data.result);
         }
     });
@@ -388,7 +392,7 @@ areaCollect.setOption({
             mapType: 'daqing',
             roam: true,
             itemStyle: {
-                normal:{label:{show:true}},
+                normal: {label: {show: true}},
                 emphasis: {
                     label: {
                         show: true
@@ -427,7 +431,7 @@ areaCollect.setOption({
 });
 
 // 拖拽重计算
-window.onresize = function() {
+window.onresize = function () {
     uploadIndexNum.resize();
     uploadIndexPie.resize();
     uploadIndexTrend.resize();
