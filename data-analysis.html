@@ -152,33 +152,32 @@
                 <div class="panel-body">
                     <div class="col-sm-6 col-sm-offset-3 form-group">
                         <div class="col-sm-4">
-                            <select id="item" tabindex="-1" class="form-control">
-                                <option value="0">健康指标</option>
-                                <option value="1">血糖</option>
-                                <option value="2">血氧</option>
-                                <option value="3">血压</option>
-                                <option value="4">BMI</option>
-                                <option value="5">尿酸</option>
-                                <option value="6">血红蛋白</option>
-                                <option value="7">体温</option>
-                                <option value="8">总胆固醇</option>
-                                <option value="9">腰臀比</option>
-                                <option value="10">脉搏</option>
+                            <select id="Item" tabindex="-1" class="form-control">
+                                <option value="none">健康指标</option>
+                                <option value="databloodglucose">血糖</option>
+                                <option value="databloodoxygen">血氧</option>
+                                <option value="databloodpressure">血压</option>
+                                <option value="databodymassindex">BMI</option>
+                                <option value="datauriccid">尿酸</option>
+                                <option value="datahemoglobin">血红蛋白</option>
+                                <option value="datatemperature">体温</option>
+                                <option value="datachol">总胆固醇</option>
+                                <option value="datawaisthipratio">腰臀比</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary">确认</button>
-                        <button class="btn btn-warning">导出Excel表格</button>
+                        <button id="Confirm" class="btn btn-primary">确认</button>
+                        <button id="Excel" class="btn btn-warning"><a></a>导出Excel表格</button>
                     </div>
                     <!-- select-->
                     <div class="table-responsive">
-                        <table class="table mb30">
+                        <table id="Table" class="table mb30">
                             <thead>
                             <tr>
                                 <th>测量时间</th>
                                 <th>测量值</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="itemList" class="hidden">
                             <tr>
                                 <td>{measureTime}</td>
                                 <td>{value}</td>
@@ -188,10 +187,10 @@
                     </div>
                     <!-- table-responsive -->
                     <table id="Paging" class="table table-bordered">
-                        <tfoot class="">
+                        <tfoot class="hidden">
                         <tr>
                             <td>
-                                <ul class="pagination" active="avtive" disabled="disabled">
+                                <ul class="pagination" active="active" disabled="disabled">
                                     <li class="previous"><span aria-hidden="true">上一页</span></li>
                                     <li class="page"><a></a></li>
                                     <li class="next"><span aria-hidden="true">下一页</span></li>
@@ -215,7 +214,7 @@
 <script src="js/custom.js"></script>
 <script src="js/jquery.table.js"></script>
 <script src="js/data-analysis.js"></script>
-
+<script src="js/jquery.table2excel.min.js"></script>
 </body>
 
 </html>
