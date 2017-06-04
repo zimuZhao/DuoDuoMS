@@ -156,21 +156,22 @@
                             <div class="col-sm-6">
                                 <input id="ID" type="text" class="form-control"/>
                             </div>
-                            <button class="btn btn-primary">搜索</button>
+                            <button id="btnSearch" class="btn btn-primary">搜索</button>
                         </div>
                     </div>
                     <!-- row-->
                 </div>
             </div>
             <!--panel-->
-            <div class="row">
+            <div id="dataPanel" class="row hidden">
+                <!--item-->
                 <div class="col-sm-6">
                     <div class="people-item">
                         <div class="media">
-                            <h3 class="pull-left">{temp}</h3>
+                            <h3 class="pull-right" id="BGglu"></h3>
                             <div class="media-body">
-                                <h4>体温检测</h4>
-                                <h4>检测时间：<span>2017-06-02</span></h4>
+                                <h3>血糖检测</h3>
+                                <h4>检测时间：<span id="BGtime"></span></h4>
                                 <a href="health-data-history.html" class="btn btn-info">历史记录</a>
                             </div>
                         </div>
@@ -180,16 +181,106 @@
                 <div class="col-sm-6">
                     <div class="people-item">
                         <div class="media">
-                            <h3 class="pull-left">{temp}</h3>
+                            <h3 class="pull-right" id="BOspo2"></h3>
                             <div class="media-body">
-                                <h4>体温检测</h4>
-                                <h4>检测时间：<span>2017-06-02</span></h4>
-                                <button class="btn btn-info">历史记录</button>
+                                <h3>血氧检测</h3>
+                                <h4>检测时间：<span id="BOtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="BPvalue"></h3>
+                            <div class="media-body">
+                                <h3>血压检测</h3>
+                                <h4>检测时间：<span id="BPtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="BMIvalue"></h3>
+                            <div class="media-body">
+                                <h3>BMI检测</h3>
+                                <h4>检测时间：<span id="BMItime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="CHOLvalue"></h3>
+                            <div class="media-body">
+                                <h3>总胆固醇检测</h3>
+                                <h4>检测时间：<span id="CHOLtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="HBvalue"></h3>
+                            <div class="media-body">
+                                <h3>血红蛋白检测</h3>
+                                <h4>检测时间：<span id="HBtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="TEMPvalue"></h3>
+                            <div class="media-body">
+                                <h3>体温检测</h3>
+                                <h4>检测时间：<span id="TEMPtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="UAvalue"></h3>
+                            <div class="media-body">
+                                <h3>尿酸检测</h3>
+                                <h4>检测时间：<span id="UAtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--item-->
+                <div class="col-sm-6">
+                    <div class="people-item">
+                        <div class="media">
+                            <h3 class="pull-right" id="WHRvalue"></h3>
+                            <div class="media-body">
+                                <h3>腰臀比检测</h3>
+                                <h4>检测时间：<span id="WHRtime"></span></h4>
+                                <a href="health-data-history.html" class="btn btn-info">历史记录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- results-list-->
 
@@ -202,6 +293,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/health-data.js"></script>
 
 </body>
 
