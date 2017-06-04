@@ -99,6 +99,12 @@ $('#btnSearch').click(function () {
     });
 });
 
+$("button[name='btnHistory']").click(function () {
+    var cardID = $('#ID').val();
+    var type = this.getAttribute('data-healthtype');
+    location.href = 'health-data-history.html?type=' + type + '&cardID=' + cardID;
+});
+
 function changeDate(time) {
     if (time == null) {
         return '';

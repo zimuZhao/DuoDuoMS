@@ -136,7 +136,7 @@
         <!-- headerbar -->
 
         <div class="pageheader">
-            <h2> {item}历史记录 </h2>
+            <h2 id="Title"></h2>
         </div>
         <!-- pageheader -->
 
@@ -152,7 +152,7 @@
                             <th>测量值</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="Table" class="hidden">
                         <tr>
                             <td>{num}</td>
                             <td>{measureTime}</td>
@@ -162,19 +162,19 @@
                     </table>
                 </div>
                 <!--table-responsive-->
-                <table id="Paging" class="table table-bordered">
-                    <tfoot>
-                    <tr>
-                        <td>
-                            <ul class="pagination" active="active" disabled="disabled">
-                                <li class="previous"><span aria-hidden="true">上一页</span></li>
-                                <li class="page"><a></a></li>
-                                <li class="next"><span aria-hidden="true">下一页</span></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
+                <!--<table id="Paging" class="table table-bordered">-->
+                <!--<tfoot>-->
+                <!--<tr>-->
+                <!--<td>-->
+                <!--<ul class="pagination" active="active" disabled="disabled">-->
+                <!--<li class="previous"><span aria-hidden="true">上一页</span></li>-->
+                <!--<li class="page"><a></a></li>-->
+                <!--<li class="next"><span aria-hidden="true">下一页</span></li>-->
+                <!--</ul>-->
+                <!--</td>-->
+                <!--</tr>-->
+                <!--</tfoot>-->
+                <!--</table>-->
                 <!-- contentpanel -->
             </div>
             <!-- mainpanel -->
@@ -184,6 +184,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/health-data-history.js"></script>
 
 </body>
 

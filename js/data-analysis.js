@@ -67,7 +67,8 @@ function getDataList(pageNo) {
                     $.each(data.result.datas, function (idx, item) {
                         var node = body;
                         var time = new Date(item.measureTime);
-                        var timeFormat = time.getFullYear() + '/' + (time.getMonth() + 1) + "/" + time.getDate();
+                        var timeFormat = time.getFullYear() + '/' + (time.getMonth() + 1) + "/" + time.getDate()
+                            + "  " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
                         node = node.replace('{measureTime}', timeFormat);
                         var value;
                         switch (type) {
