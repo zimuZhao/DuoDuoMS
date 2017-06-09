@@ -1,4 +1,4 @@
-var Domain = "/api/";
+var Domain = "../ehealth5a-api-1.0/";
 
 $(document).ready(function () {
     //粒子背景特效

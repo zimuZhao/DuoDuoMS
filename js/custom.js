@@ -1,5 +1,5 @@
 // 各页公用部分
-var Domain = "/api/";
+var Domain = "../ehealth5a-api-1.0/";
 $('#loginName').text($.cookie("userName"));
 
 jQuery(window).load(function() {

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     showLocation();
+    alert("功能暂未开放，当前不能添加护工，敬请期待！");
 });
 
 /**
