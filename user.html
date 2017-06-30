@@ -19,13 +19,14 @@
     <![endif]-->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.cookies.js"></script>
+
     <script type="text/javascript">
         if ($.cookie('userID') == null) {
             alert("请重新登录系统");
             window.location.href = "./login.html";
         }
-        alert('功能暂未开放，敬请期待！');
     </script>
+
 </head>
 
 <body>
@@ -150,7 +151,89 @@
 
         <div class="contentpanel">
 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <label class="col-sm-3 control-label" for="ID">按卡号搜索</label>
+                            <div class="col-sm-6">
+                                <input id="ID" type="text" class="form-control"/>
+                            </div>
+                            <button id="btnSearch" class="btn btn-primary">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body panel-body-nopadding">
 
+                    <div class="table-responsive">
+                        <table class="table mb30">
+                            <thead>
+                            <tr>
+                                <!--<th>照片</th>-->
+                                <th>序号</th>
+                                <th>卡号</th>
+                                <th>卡类型</th>
+                                <th>用户名</th>
+                                <th>性别</th>
+                                <th>创建时间</th>
+                                <th>姓名</th>
+                                <th>身份证号</th>
+                                <th>医保卡号</th>
+                                <th>地址</th>
+                                <th>联系电话</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="userList" class="hidden">
+                            <tr id="{idxID}">
+                                <!--<td>-->
+                                <!--<img src="{userImage}" class="thumbnail media-object imgSize" data-src="holder.js/110x110">-->
+                                <!--</td>-->
+                                <td>{idx}</td>
+                                <td>{userID}</td>
+                                <td>{cardType}</td>
+                                <td>{userName}</td>
+                                <td>{sex}</td>
+                                <td>{creatTime}</td>
+                                <td>{name}</td>
+                                <td>{iDNumber}</td>
+                                <td>{medicareNumber}</td>
+                                <td>{address}</td>
+                                <td>{mobile}</td>
+                                <td class="table-action">
+                                    <div title="修改" data-toggle="tootip" class="btn btn-warning-alt btn-xs"
+                                         onclick="editUser(this)">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                    <div title="删除" data-toggle="tootip" class="btn btn-danger-alt btn-xs"
+                                         onclick="deleteUser(this)">
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- table-responsive -->
+
+                </div>
+
+                <table id="Paging" class="table table-bordered">
+                    <tfoot class="hidden">
+                    <tr>
+                        <td>
+                            <ul class="pagination" active="active" disabled="disabled">
+                                <li class="previous"><span aria-hidden="true">上一页</span></li>
+                                <li class="page"><a></a></li>
+                                <li class="next"><span aria-hidden="true">下一页</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
             <!-- contentpanel -->
         </div>
         <!-- mainpanel -->
@@ -161,6 +244,8 @@
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/custom.js"></script>
 
+<script src="js/jquery.table.js"></script>
+<script src="js/user.js"></script>
 </body>
 
 </html>
