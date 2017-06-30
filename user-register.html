@@ -19,12 +19,14 @@
     <![endif]-->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.cookies.js"></script>
+    <!--
     <script type="text/javascript">
      if ($.cookie('userID') == null) {
             alert("请重新登录系统");
             window.location.href = "./login.html";
         }   
     </script>
+    -->
 </head>
 
 <body>
@@ -154,9 +156,8 @@
                         <h4 class="panel-title">新增用户</h4>
                         <p>添加新用户，分发设备/卡</p>
                     </div>
-                    <div class="panel-body panel-body-nopadding">
-
-                        <form id="form" class="form-horizontal form-bordered">
+                    <form id="form" class="form-horizontal form-bordered">
+                        <div class="panel-body panel-body-nopadding">
 
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">卡号 <span class="asterisk">*</span></label>
@@ -221,7 +222,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label" for="checkbox">是否设备拥有者 </label>
+                                <label class="col-sm-3 control-label" for="ckbOwner">是否设备拥有者 </label>
                                 <div class="col-sm-1">
                                     <div class="checkbox block">
                                         <label><input id="ckbOwner" type="checkbox"> 是</label>
@@ -235,22 +236,22 @@
 
 
 
-                    </div>
-                    <!-- panel-body -->
+                        </div>
+                        <!-- panel-body -->
 
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <button type="submit" class="btn btn-primary">确认</button>&nbsp;
-                                <button id="cancel" type="button" class="btn btn-default">取消</button>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <button type="submit" class="btn btn-primary">确认</button>&nbsp;
+                                    <button id="cancel" type="button" class="btn btn-default">取消</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- panel-footer -->
-
+                        <!-- panel-footer -->
+                    </form>
                 </div>
 
-                </form>
+
 
             </div>
             <!-- contentpanel -->

@@ -25,12 +25,15 @@
     <![endif]-->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.cookies.js"></script>
+
+
     <script type="text/javascript">
         if ($.cookie('userID') == null) {
             alert("请重新登录系统");
             window.location.href = "./login.html";
         }
     </script>
+
 </head>
 
 <body>
@@ -158,7 +161,7 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <form action="files" class="dropzone">
+                    <form id="form" action="files" class="dropzone">
                         <div class="fallback">
                             <input name="file" type="file" multiple/>
                         </div>
@@ -191,9 +194,10 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">详细资料</h4>
                         </div>
-                        <div class="panel-body panel-body-nopadding">
+                        <form id="nurseForm" class="form-horizontal form-bordered">
+                            <div class="panel-body panel-body-nopadding">
 
-                            <form class="form-horizontal form-bordered">
+
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="name">姓名
@@ -204,9 +208,10 @@
                                     </div>
                                     <label class="col-sm-1 control-label">性别</label>
                                     <div class="col-sm-2">
-                                        <select class="form-control">
-                                            <option>女</option>
-                                            <option>男</option>
+                                        <select id="sex" class="form-control">
+                                            <option value="0">未知</option>
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
                                         </select>
                                     </div>
                                 </div>
@@ -216,7 +221,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="联系电话" class="form-control"/>
+                                        <input id="mobile" type="text" placeholder="联系电话" class="form-control"/>
                                     </div>
                                 </div>
 
@@ -225,33 +230,33 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="联系地址" class="form-control"/>
+                                        <input id="address" type="text" placeholder="联系地址" class="form-control"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">学历</label>
                                     <div class="col-sm-3">
-                                        <select class="form-control">
+                                        <select id="education" class="form-control">
                                             <option></option>
-                                            <option>小学</option>
-                                            <option>初中</option>
-                                            <option>中专/高中</option>
-                                            <option>专科/本科</option>
-                                            <option>本科以上</option>
+                                            <option value="小学">小学</option>
+                                            <option value="初中">初中</option>
+                                            <option value="中专/高中">中专/高中</option>
+                                            <option value="专科/本科">专科/本科</option>
+                                            <option value="本科以上">本科以上</option>
                                         </select>
                                     </div>
                                     <label class="col-sm-1 control-label" for="name">年龄
                                     </label>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="年龄" class="form-control">
+                                        <input id="age" type="text" placeholder="年龄" class="form-control">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">民族</label>
                                     <div class="col-sm-3">
-                                        <select class="form-control selectpicker" data-style="btn-white"
+                                        <select id="ethnic" class="form-control selectpicker" data-style="btn-white"
                                                 data-live-search="true">
                                             <option value="汉族">汉族</option>
                                             <option value="壮族">壮族</option>
@@ -313,18 +318,18 @@
                                     </div>
                                     <label class="col-sm-1 control-label">薪资</label>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="薪资" class="form-control"/>
+                                        <input id="pay" type="text" placeholder="薪资" class="form-control"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">服务类型</label>
                                     <div class="col-sm-3">
-                                        <input type="text" placeholder="服务类型（陪护）" class="form-control"/>
+                                        <input id="serviceType" type="text" placeholder="服务类型（陪护）" class="form-control"/>
                                     </div>
                                     <label class="col-sm-1 control-label">工龄</label>
                                     <div class="col-sm-2">
-                                        <input type="text" placeholder="工作年限" class="form-control"/>
+                                        <input id="workExperience" type="text" placeholder="工作年限" class="form-control"/>
                                     </div>
                                 </div>
 
@@ -363,37 +368,37 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">服务区域</label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="服务区域" class="form-control"/>
+                                        <input id ="serviceArea" type="text" placeholder="服务区域" class="form-control"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">技能描述</label>
                                     <div class="col-sm-6">
-                                        <textarea class="form-control" rows="5"></textarea>
+                                        <textarea id ="intro" class="form-control" rows="5"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">到家陪护</label>
                                     <div class="col-sm-6">
-                                        <div class="radio"><label><input type="radio"> 是</label></div>
+                                        <div class="radio"><label><input id="ifStay" type="radio"> 是</label></div>
                                     </div>
                                 </div>
 
-                            </form>
+                            </div>
+                            <!-- panel-body -->
 
-                        </div><!-- panel-body -->
-
-                        <div class="panel-footer">
-                            <div class="row">
-                                <div class="col-sm-6 col-sm-offset-3">
-                                    <button class="btn btn-primary">提交</button>&nbsp;
-                                    <button class="btn btn-default">取消</button>
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <button type="submit" class="btn btn-primary">提交</button>&nbsp;
+                                        <button id="cancel" type="button" class="btn btn-default">取消</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div><!-- panel-footer -->
-
+                            <!-- panel-footer -->
+                        </form>
                     </div><!-- panel -->
 
                 </div><!-- col-sm-9 -->
@@ -415,6 +420,7 @@
 <script src="js/stars.js"></script>
 <!-- 图片上传 -->
 <script src="js/dropzone.min.js"></script>
+<script src="js/Validform_v5.3.2.js"></script>
 
 <script src="js/nurse-detail.js"></script>
 

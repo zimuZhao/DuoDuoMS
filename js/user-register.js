@@ -68,7 +68,7 @@ function addUser() {
     user = JSON.stringify(user);
     $.ajax({
         type: "POST",
-        url: Domain + "user/add",
+        url: Domain + "user/add/",
         dataType: "json",
         contentType: "application/json",
         data: user,
